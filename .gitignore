@@ -1,0 +1,5 @@
+# IntelliJ generated files
+.idea
+.iml
+# macOS generated files
+.DS_Store
