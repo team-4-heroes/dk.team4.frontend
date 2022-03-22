@@ -11,6 +11,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/core-js/2.4.1/core.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+  <script src="node_modules/dawa-autocomplete2/dist/js/dawa-autocomplete2.min.js"></script>
+  <script src="js-for-pages/page-auto-complete.js"></script>
   <!-- Bootstrap files end -->
   <link rel="stylesheet" href="styles/style.css">
   <title>Hobby Explorer</title>
@@ -31,6 +35,9 @@
             </li>
             <li class="nav-item">
               <a id="page-example" class="nav-link" href="#">Example Page</a>
+            </li>
+            <li class="nav-item">
+              <a id="page-auto-complete" class="nav-link" href="#">Address Search</a>
             </li>
           </ul>
           <form class="d-flex">
@@ -67,4 +74,10 @@
   <div class="container bg-secondary p-4">
     <!-- Login Page here -->
 </div>
+</template>
+<template data-id="page-auto-complete">
+  <h2>Search for address</h2>
+  <label for='adresse'>Autocomplete af adresse:</label>
+  <input type="text" id="adresse">
+  <p>Valgt adresse: <span id="valgtadresse"/></p>
 </template>
