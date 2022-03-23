@@ -54,5 +54,7 @@ export function makeOptions(method, body) {
       "Accept": "application/json"
     }
   } // Add optional body
-  if (body) opts.body = JSON.stringify(body)
+  if (body) {opts.body = JSON.stringify(body)}
+
+  return opts
 }
