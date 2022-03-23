@@ -9,6 +9,7 @@ const person = {}
 
 function addPerson() {
     console.log("Called addPerson")
+    //Ask for username, ask for password
     person.email = document.getElementById("input-email").value()
     person.firstName = document.getElementById("input-firstname").value()
     person.lastName = document.getElementById("input-lastname").value()
