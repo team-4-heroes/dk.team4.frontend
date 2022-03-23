@@ -67,11 +67,12 @@
 </template>
 <template data-id="page-my-details">
   <h2>My Details</h2>
-  <p>Here you should see name, address, hobbbies etc. for the loged in member</p>
+  <p>Here you should see name, address, hobbbies etc. for the logged in person</p>
 </template>
 <template data-id="page-login">
-<div class="container bg-secondary p-4">
-    <h2 class="mb-3">Login</h2>
+<div class="d-flex align-items-center" style="height: 80vh;">
+<div class="bg-light px-4 py-2 mx-auto text-center border" style="min-width: 30vw;">
+    <h3 class="mb-3">Enter your credentials</h2>
       <div class="form-floating mb-3">
         <input type="text" class="form-control" id="username" value="user1">
         <label for="username">Username</label>
@@ -83,6 +84,7 @@
       <div class="">
         <button id="btn-login" class="btn btn-primary">Login</button>
       </div>
+</div>
 </div>
 </template>
 <template data-id="page-logout">
@@ -104,6 +106,5 @@
               <tbody id="tbody"></tbody>
             </table>
       </div>
-    <!-- Search results page here -->
   </div>
 </template>
