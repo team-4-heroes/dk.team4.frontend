@@ -1,14 +1,10 @@
 /* Global CSS file */
 
-label {
-    color: red;
-}
-
 .autocomplete-container {
     /* relative position for at de absolut positionerede forslag får korrekt placering.*/
     position: relative;
     width: 100%;
-    max-width: 30em;
+    max-width: 50em;
 }
 
 .autocomplete-container input {

@@ -1,5 +1,6 @@
 import { renderTemplate, setActive, showPage } from "./utils.js"
 
+
 function renderMenuItems(evt) {
   const element = evt.target
   setActive(element)
@@ -9,10 +10,14 @@ function renderMenuItems(evt) {
     // Execute JS for the chosen page
     case "page-example": { 
       // Example
-      break
+      break;
+    }
+    case "page-auto-complete": {
+        break;
     }
   }
 }
+
 
 document.getElementById("menu").onclick = renderMenuItems; // handle click events on menu-items
 showPage("page-home") // Set the default page to render
