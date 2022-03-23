@@ -34,16 +34,19 @@
               <a id="page-home" class="nav-link active" href="#">Home</a>
             </li>
             <li class="nav-item">
-              <a id="page-example" class="nav-link" href="#">Example Page</a>
+              <a id="page-login" class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <a id="page-logout" class="nav-link" href="#" style="display: none;">Logout</a>
             </li>
             <li class="nav-item">
               <a id="page-auto-complete" class="nav-link" href="#">Address Search</a>
             </li>
           </ul>
-          <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
-          </form>
+          <div class="d-flex">
+            <input id="hobby-query" class="form-control me-2" type="search" placeholder="Enter hobby" aria-label="Search">
+            <button id="page-search-result" class="btn btn-outline-success">Search</button>
+          </div>
         </div>
       </div>
     </nav>
@@ -59,32 +62,62 @@
   <div class="alert alert-success">Welcome to hobby explorer</div>
   <!-- home page content here -->
 </template>
-<template data-id="page-example">
-  <h2>Page Example</h2>
-</template>
 <template data-id="page-sign-up">
   <h2>Sign up as user with hobby-explorer</h2>
   <p>Here you should be abble to signup as a new user</p>
 </template>
 <template data-id="page-my-details">
   <h2>My Details</h2>
-  <p>Here you should see name, address, hobbbies etc. for the loged in member</p>
+  <p>Here you should see name, address, hobbbies etc. for the logged in person</p>
 </template>
 <template data-id="page-login">
-  <div class="container bg-secondary p-4">
-    <!-- Login Page here -->
+<div class="d-flex align-items-center" style="height: 80vh;">
+<div class="bg-light px-4 py-2 mx-auto text-center border" style="min-width: 30vw;">
+    <h3 class="mb-3">Enter your credentials</h3>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="username" value="user1">
+        <label for="username">Username</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="password" value="passw0rd1">
+        <label for="password">Password</label>
+      </div>
+      <div class="">
+        <button id="btn-login" class="btn btn-primary">Login</button>
+      </div>
+</div>
 </div>
 </template>
 <template data-id="page-auto-complete">
   <script src="js-for-pages/page-auto-complete.js"></script>
   <div class="input-group mb-3 autocomplete-container">
     <span class="input-group-text" id="basic-addon1">Search for address:</span>
-    <input type="search" class="form-control" id="dawa-autocomplete-input" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    <input type="search" class="form-control" id="dawa-autocomplete-input" placeholder="start searching.." aria-label="Address" aria-describedby="basic-addon1">
     <!-- Suggestions will appear here -->
   </div>
-
-
   <blockquote class="blockquote">
     <p>Selected address: <span id="selected-address"/></p>
   </blockquote>
+</template>
+<template data-id="page-logout">
+  <div class="alert alert-success">Thank you for using our service</div>
+</template>
+<template data-id="page-search-result">
+  <div class="container">
+    <div class="card">
+      <div class="card-body" id="user-info">
+          <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">Firstname</th>
+                  <th scope="col">Lastname</th>
+                  <th scope="col">Email</th>
+                  <th scope="col">Phone</th>
+                </tr>
+              </thead>
+              <tbody id="tbody"></tbody>
+            </table>
+      </div>
+  </div>
+  </div>
 </template>
