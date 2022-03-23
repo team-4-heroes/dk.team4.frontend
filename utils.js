@@ -54,7 +54,11 @@ export function makeOptions(method, body) {
       "Accept": "application/json"
     }
   } // Add optional body
-  if (body) {opts.body = JSON.stringify(body)}
 
+  if (body) opts.body = JSON.stringify(body)
+  // Authentication
+  let jwt = sessionStorage.getItem("token")
+  console.log(jwt)
+  if (jwt) opts.headers.Authorization = `Bearer ${jwt}`
   return opts
 }
