@@ -21,10 +21,9 @@ function signUp() {
 
     const options = makeOptions("POST", person)
 
-    fetch(SERVER_URL+"/persons", options)
+    fetch(SERVER_URL+"persons", options)
     .then(res=>res.json())
     .then(newPerson => {
         document.getElementById("person-info-all").innerText = JSON.stringify(newPerson)
     })
     .catch(e=>console.error(e))
-}
