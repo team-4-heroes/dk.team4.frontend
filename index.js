@@ -30,6 +30,9 @@ function renderMenuItems(evt) {
       logout()
       break
     }
+      case "page-user-profile": {
+          //
+      }
   }
 }
 
