@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light border">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">Krak</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -46,6 +46,7 @@
         </div>
       </div>
     </nav>
+    <span class="bg-light text-success p-2 border" id="user-details"></span>
     <div id="content" class="mt-3 pb-4"><!-- HTML content from the template tags below gets injected here --></div>
 </body>
 </html>
@@ -55,7 +56,7 @@
 -->
 
 <template data-id="page-home">
-  <div class="alert alert-success">Welcome to hobby explorer</div>
+  <div class="alert alert-success text-center">Welcome to hobby explorer</div>
   <!-- home page content here -->
 </template>
 <template data-id="page-example">
