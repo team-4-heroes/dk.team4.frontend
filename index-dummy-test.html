@@ -61,22 +61,42 @@
 <template data-id="page-sign-up">
   <h2>Sign up as user with hobby-explorer</h2>
   <p>Here you should be able to sign up as a new user</p>
-  <form>
-    <label id="input-email">Email</label>
-    <input type="text" id ="email" name="email"><br>
 
-    <label id="input-firstname">Navn</label>
-    <input type="text" id ="fname" name="fname"><br>
+  <div class="form-floating mb-3">
+    <input type="email" class="form-control" id="floatingUsername" placeholder="Brugernavn">
+    <label for="floatingUsername">Brugernavn</label>
+  </div>
 
-    <label id="input-lastname">Efternavn</label>
-    <input type="text" id ="lname" name="lname"><br>
+  <div class="form-floating mb-3">
+    <input type="password" class="form-control" id="floatingPassword" placeholder="Kodeord">
+    <label for="floatingPassword">Kodeord</label>
+  </div>
 
-    <label id="input-telephone">Telephone</label>
-    <input type="text" id ="tele" name="tele"><br>
-    <button id="opret">Opret</button>
+  <div class="form-floating mb-3">
+    <input type="password" class="form-control" id="floatingEmail" placeholder="Email@email.dk">
+    <label for="floatingEmail">Email</label>
+  </div>
 
-    <table id="person-info-all"></table>
-  </form>
+  <div class="form-floating mb-3">
+    <input type="password" class="form-control" id="floatingFname" placeholder="Fornavn">
+    <label for="floatingFname">Fornavn</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="password" class="form-control" id="floatingLname" placeholder="Efternavn">
+    <label for="floatingLname">Efternavn</label>
+  </div>
+
+  <div class="form-floating mb-3">
+    <input type="password" class="form-control" id="floatingTelephone" placeholder="Telefonnummer">
+    <label for="floatingTelephone">Telefonnummer</label>
+  </div>
+
+  <div class="d-grid gap-2 col-6 mx-auto">
+    <button class="btn btn-primary" type="button" id="btn-sign-up">Tilmeld</button>
+  </div>
+
+  <table id="person-info-all"></table>
 </template>
 <template data-id="page-my-details">
   <h2>My Details</h2>
