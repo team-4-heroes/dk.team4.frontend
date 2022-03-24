@@ -2,6 +2,7 @@ import { makeOptions, renderTemplate, setActive, showPage } from "./utils.js"
 import { setupLoginHandlers, logout, updateLoginDependentComponents } from "./js-for-pages/page-login.js"
 import { mapAndDraw } from "./js-for-pages/page-search-result.js"
 
+
 function renderMenuItems(evt) {
   const element = evt.target
   setActive(element)
@@ -9,6 +10,10 @@ function renderMenuItems(evt) {
   renderTemplate(id)  // update content DOM node with new content
   switch (id) {
     // Execute JS for the chosen page
+
+    case "page-auto-complete": {
+        break;
+    }
     case "page-search-result": { 
         fetch(`http://127.0.0.1:8080/api/hobby-infos/search-by-hobby/${document.getElementById("hobby-query").value}`, makeOptions("get"))
           .then(res=>res.json()).then(h=>{
