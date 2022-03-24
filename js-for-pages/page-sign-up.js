@@ -16,7 +16,7 @@ function addPerson() {
 
     const options = makeOptions("POST", person)
 
-    fetch(SERVER_URL+"/persons", options)
+    fetch(SERVER_URL+"persons", options)
     .then(res=>res.json())
     .then(newPerson => {
         document.getElementById("person-info-all").innerText = JSON.stringify(newPerson)
@@ -41,7 +41,7 @@ function addHobbies() {
     hobbyInfo.person = person
     hobbyInfo.hobby = document.getElementById("input-hobby").value()
 
-    fetch(SERVER_URL + "/persons/" + 3)
+    fetch(SERVER_URL + "persons/" + 3)
         .then(res => res.json())
         .then(data => {
             console.log(data)
