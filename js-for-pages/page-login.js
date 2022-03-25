@@ -43,4 +43,5 @@ export function updateLoginDependentComponents() {
   document.getElementById("page-login").style.display = loggedIn ? "none" : "block"
   document.getElementById("page-logout").style.display = loggedIn ? "block" : "none"
   document.getElementById("user-details").style.display = loggedIn ? "inline" : "none"
+  document.getElementById("hobby-search").style.display = loggedIn ? "flex" : "none"
 }
