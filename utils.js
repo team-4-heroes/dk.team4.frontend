@@ -26,6 +26,7 @@ export function setActive(newActive) {
 }
 
 export function renderTemplate(id) {
+  console.log("Called renderTemplate")
   const temp = document.querySelector(`[data-id=${id}]`)
   if (!temp) {
     return console.error(`No Template found for '${id}' `)

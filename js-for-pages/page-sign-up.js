@@ -1,30 +1,27 @@
-import {makeOptions} from "../utils";
-import {SERVER_URL} from "../settings";
+import {makeOptions} from "../utils.js";
+import {SERVER_URL} from "../settings.js";
 
-export function addPersonHandlers() {
-    document.getElementById("btn-sign-up").onclick(signUp())
+export function signupHandlers() {
+    document.getElementById("btn-sign-up").onclick = signUp
 }
 
-const person = {}
-
 function signUp() {
+    const person = {}
     console.log("Called signUp")
-    //Select username
-    person.username = document.getElementById("floatingUsername").value()
-    //Select password
-    person.password = document.getElementById("floatingPassword").value()
-    //Get additional info
-    person.email = document.getElementById("input-email").value()
-    person.firstName = document.getElementById("input-firstname").value()
-    person.lastName = document.getElementById("input-lastname").value()
-    person.phoneNumber = document.getElementById("input-telephone").value()
+    person.username = document.getElementById("floatingUsername").value
+    person.password = document.getElementById("floatingPassword").value
+    person.email = document.getElementById("floatingEmail").value
+    person.firstName = document.getElementById("floatingFname").value
+    person.lastName = document.getElementById("floatingLname").value
+    person.phoneNumber = document.getElementById("floatingTelephone").value
 
     const options = makeOptions("POST", person)
 
-    fetch(SERVER_URL+"/persons", options)
+    fetch(SERVER_URL+"auth/register", options)
     .then(res=>res.json())
     .then(newPerson => {
-        document.getElementById("person-info-all").innerText = JSON.stringify(newPerson)
+        document.getElementById("person-info-all").innerText =
+            "New user created with username " + JSON.stringify(newPerson.username)
     })
     .catch(e=>console.error(e))
 }
