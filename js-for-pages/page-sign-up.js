@@ -17,11 +17,11 @@ function signUp() {
 
     const options = makeOptions("POST", person)
 
-    fetch(SERVER_URL+"auth/register", options)
-    .then(res=>res.json())
-    .then(newPerson => {
-        document.getElementById("person-info-all").innerText =
-            "New user created with username " + JSON.stringify(newPerson.username)
-    })
-    .catch(e=>console.error(e))
+    fetch(SERVER_URL + "auth/register", options)
+        .then(res => res.json())
+        .then(newPerson => {
+            document.getElementById("person-info-all").innerText =
+                "New user created with username " + JSON.stringify(newPerson.username)
+        })
+        .catch(e => console.error(e))
 }
