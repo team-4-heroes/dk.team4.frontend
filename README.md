@@ -1,6 +1,6 @@
 # dk.team4.frontend
 
-## Names and GItHub accounts
+## Names and GitHub accounts
 He Englund https://github.com/SirMeows 
 
 Simon Bøg Jørgensen https://github.com/Kaffelat 
