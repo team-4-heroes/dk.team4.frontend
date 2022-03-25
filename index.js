@@ -1,8 +1,8 @@
 import { makeOptions, renderTemplate, setActive, showPage } from "./utils.js"
 import { setupLoginHandlers, logout, updateLoginDependentComponents } from "./js-for-pages/page-login.js"
 import { mapAndDraw } from "./js-for-pages/page-search-result.js"
-import {signupHandlers} from "./js-for-pages/page-sign-up.js";
-import {displayUserProfile} from "./js-for-pages/page-user-profile.js";
+import { signupHandlers } from "./js-for-pages/page-sign-up.js";
+import { displayUserProfile, setupAutoComplete } from "./js-for-pages/page-user-profile.js";
 import {SERVER_URL} from "../settings.js";
 
 function renderMenuItems(evt) {
@@ -35,6 +35,7 @@ function renderMenuItems(evt) {
       break
     }
     case "page-user-profile": {
+        setupAutoComplete()
         displayUserProfile()
         break
     }
