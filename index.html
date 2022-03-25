@@ -76,6 +76,17 @@
   <h2>My Details</h2>
   <div id="user-profile-container"></div>
   <div id="user-address-container"></div>
+  <div id="address-search-container">
+    <script src="js-for-pages/page-search-address.js"></script>
+    <div class="input-group mb-3 autocomplete-container">
+      <span class="input-group-text" id="basic-addon1">Search for address:</span>
+      <input type="search" class="form-control" id="dawa-autocomplete-input" placeholder="start searching.." aria-label="Address" aria-describedby="basic-addon1">
+    <!-- Suggestions will appear here -->
+    </div>
+    <blockquote class="blockquote">
+      <p>Selected address: <span id="selected-address"/></p>
+    </blockquote>
+  </div>
 </template>
 
 
@@ -97,17 +108,18 @@
 </div>
 </div>
 </template>
-<template data-id="page-search-address">
+<!--<template data-id="page-search-address">
   <script src="js-for-pages/page-search-address.js"></script>
   <div class="input-group mb-3 autocomplete-container">
     <span class="input-group-text" id="basic-addon1">Search for address:</span>
     <input type="search" class="form-control" id="dawa-autocomplete-input" placeholder="start searching.." aria-label="Address" aria-describedby="basic-addon1">
-    <!-- Suggestions will appear here -->
+
   </div>
   <blockquote class="blockquote">
     <p>Selected address: <span id="selected-address"/></p>
   </blockquote>
 </template>
+-->
 <template data-id="page-logout">
   <div class="alert alert-success">Thank you for using our service</div>
 </template>
