@@ -40,15 +40,29 @@ function renderMenuItems(evt) {
        // function to get user details from server
         // sessionStorage.getItem("username")
         fetch(`${SERVER_URL}persons/details?username=user1`, makeOptions("GET"))
+
             .then(res=>res.json())
             .then(jsonParsed=> {
                 console.log(jsonParsed)
+                renderUserDetails(jsonParsed)
             })
         getUserInfo()
        // update user profile html
         break
     }
   }
+}
+
+function renderUserDetails(user) {
+    let profileContainer = document.getElementById("user-profile-container")
+    profileContainer.innerHTML="some nice kisses to special person!"
+    let userDetailsHTML =
+    `<ol>
+    <li>Username:</li>
+    <li>First name:${user.firstName}</li>
+    <li>Last name:${user.lastName}</li>
+    </ol>`
+    profileContainer.innerHTML=userDetailsHTML
 }
 
 document.getElementById("menu").onclick = renderMenuItems // handle click events on menu-items
