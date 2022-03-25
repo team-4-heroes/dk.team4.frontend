@@ -19,9 +19,9 @@ function signUp() {
 
     fetch(SERVER_URL + "auth/register", options)
         .then(res => res.json())
-        .then(newPerson => {
+        .then(person => {
             document.getElementById("person-info-all").innerText =
-                "New user created with username " + JSON.stringify(newPerson.username)
+                "New user created with username " + JSON.stringify(person.username)
         })
         .catch(e => console.error(e))
 }

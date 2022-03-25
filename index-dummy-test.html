@@ -58,46 +58,47 @@
 <template data-id="page-example">
   <h2>Page Example</h2>
 </template>
+<!-- sættes ind i index i endeligt projekt /-->
 <template data-id="page-sign-up">
   <h2>Sign up as user with hobby-explorer</h2>
   <p>Here you should be able to sign up as a new user</p>
-
-  <div class="form-floating mb-3">
-    <input type="email" class="form-control" id="floatingUsername" placeholder="Username" value="test4">
-    <label for="floatingUsername">Username</label>
-  </div>
-
-  <div class="form-floating mb-3">
-    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" value="test4444">
-    <label for="floatingPassword">Password</label>
-  </div>
-
-  <div class="form-floating mb-3">
-    <input type="password" class="form-control" id="floatingEmail" placeholder="Email@email.com" value="test4@email.dk">
-    <label for="floatingEmail">Email</label>
-  </div>
-
-  <div class="form-floating mb-3">
-    <input type="password" class="form-control" id="floatingFname" placeholder="fname" value="test4">
-    <label for="floatingFname">First name</label>
-  </div>
-
-  <div class="form-floating mb-3">
-    <input type="password" class="form-control" id="floatingLname" placeholder="lname" value="test44444">
-    <label for="floatingLname">Last name</label>
-  </div>
-
-  <div class="form-floating mb-3">
-    <input type="password" class="form-control" id="floatingTelephone" placeholder="Telephone" value="44444444">
-    <label for="floatingTelephone">Telephone</label>
-  </div>
-
   <div class="d-grid gap-2 col-6 mx-auto">
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingUsername" placeholder="Username" value="test4">
+      <label for="floatingUsername">Username</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="password" class="form-control" id="floatingPassword" placeholder="Password" value="test4444">
+      <label for="floatingPassword">Password</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="email" class="form-control" id="floatingEmail" placeholder="Email@email.com" value="test4@email.dk">
+      <label for="floatingEmail">Email</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingFname" placeholder="fname" value="test4">
+      <label for="floatingFname">First name</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingLname" placeholder="lname" value="test44444">
+      <label for="floatingLname">Last name</label>
+    </div>
+
+    <div class="form-floating mb-3">
+      <input type="text" class="form-control" id="floatingTelephone" placeholder="Telephone" value="44444444">
+      <label for="floatingTelephone">Telephone</label>
+    </div>
+
     <button class="btn btn-primary" type="button" id="btn-sign-up">Tilmeld</button>
   </div>
 
   <table id="person-info-all"></table>
 </template>
+<!-- / -->
 <template data-id="page-my-details">
   <h2>My Details</h2>
   <p>Here you should see name, address, hobbies etc. for the logged in member</p>
