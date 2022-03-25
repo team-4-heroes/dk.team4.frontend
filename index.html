@@ -66,26 +66,20 @@
 <template data-id="page-sign-up">
   <h2>Sign up as user with hobby-explorer</h2>
   <p>Here you should be abble to signup as a new user</p>
-
-
 </template>
+<!-- TODO: Add beautiful styling with bootstrap -->
 <template data-id="page-user-profile">
   <h2>My Details</h2>
   <div id="user-profile-container"></div>
   <div id="user-address-container"></div>
-  <div id="address-search-container">
+  <div id="address-search-container" hidden>
     <div class="input-group mb-3 autocomplete-container">
       <span class="input-group-text" id="basic-addon1">Search for address:</span>
       <input type="search" class="form-control" id="dawa-autocomplete-input" placeholder="start searching.." aria-label="Address" aria-describedby="basic-addon1">
     <!-- Suggestions will appear here -->
     </div>
-    <blockquote class="blockquote">
-      <p>Selected address: <span id="selected-address"/></p>
-    </blockquote>
   </div>
 </template>
-
-
 <template data-id="page-login">
 <div class="d-flex align-items-center" style="height: 80vh;">
 <div class="bg-light px-4 py-2 mx-auto text-center border" style="min-width: 30vw;">

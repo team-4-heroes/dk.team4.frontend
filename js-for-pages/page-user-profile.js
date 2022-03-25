@@ -24,7 +24,6 @@ function inputAddress() {
 
 function renderUserDetails(user) {
     let profileContainer = document.getElementById("user-profile-container")
-    profileContainer.innerHTML="some nice kisses to special person!"
     let userDetailsHTML =
         `<ul>
         <li>User id: ${user.id}</li>
@@ -38,20 +37,47 @@ function renderUserDetails(user) {
 }
 
 function handleAddress(address) {
+    document.getElementById("address-search-container").hidden = true
     let addressContainer = document.getElementById("user-address-container")
+    addressContainer.hidden = false
     let addressDetailsHTML =
         `<ul>
-            <li>My Address Here</li>
+            <li>Address: ${renderAddress(address)}</li>
         </ul>`
     addressContainer.innerHTML=addressDetailsHTML
 }
 
+function renderAddress(address) {
+    // TODO: Account for null values (floor and door nr)
+    return `${address.street} ${address.houseNumber}, ${address.floorNumber}${address.doorNumber}. ${address.zipCode}`
+}
+
 export function setupAutoComplete() {
     dawaAutocomplete.dawaAutocomplete(document.getElementById('dawa-autocomplete-input'), {
-        select: function (selected) {
-            document.getElementById('selected-address').innerHTML = selected.tekst;
-        }
+        select: sendAddressToServer
     });
+}
+
+function sendAddressToServer(dawaAddress) {
+    console.log(dawaAddress)
+    var username = sessionStorage.getItem("username")
+
+    let address = {
+        street: dawaAddress.data.vejnavn,
+        houseNumber: dawaAddress.data.husnr,
+        floorNumber: dawaAddress.data.etage,
+        doorNumber: dawaAddress.data.dør,
+        zipCode: dawaAddress.data.postnr,
+        municipality: dawaAddress.data.postnrnavn
+    }
+
+
+    fetch(`${SERVER_URL}persons/${username}/address`, makeOptions("PUT", address))
+        .then(res=> res.json())
+        .then(address=> handleAddress(address))
+
+
+
 }
 
 
