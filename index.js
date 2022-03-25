@@ -1,6 +1,7 @@
 import { makeOptions, renderTemplate, setActive, showPage } from "./utils.js"
 import { setupLoginHandlers, logout, updateLoginDependentComponents } from "./js-for-pages/page-login.js"
 import { mapAndDraw } from "./js-for-pages/page-search-result.js"
+import {signupHandlers} from "./js-for-pages/page-sign-up.js";
 
 
 function renderMenuItems(evt) {
@@ -28,6 +29,11 @@ function renderMenuItems(evt) {
     }
     case "page-logout": {
       logout()
+      break
+    }
+    case "page-sign-up": {
+      console.log("page-sign-up")
+      signupHandlers()
       break
     }
   }
