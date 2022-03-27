@@ -44,25 +44,21 @@ function renderUserDetails(user) {
 
 function renderItem(item, label) {
     return `<div class="input-group mb-3 ">
-        <span id="labelFor${label}" class="input-group-text">${label}</span>
+        <span id="labelFor${label}" class="input-group-text col-3">${label}</span>
         <input type="text" readOnly class="form-control" id="${label}_id" value="${item}" aria-label="Address" aria-describedby="labelFor${label}">
     </div>`
 }
 
 function handleAddress(address) {
     document.getElementById("address-search-container").hidden = true
-    let addressContainer = document.getElementById("user-address-container")
-    addressContainer.hidden = false
-    let addressDetailsHTML =
-        `<ul>
-            <li>Address: ${renderAddress(address)}</li>
-        </ul>`
-    addressContainer.innerHTML=addressDetailsHTML
+    let addressContainer = document.getElementById("user-profile-container")
+    let addressDetailsHTML = renderItem(renderAddress(address), "Address")
+    addressContainer.innerHTML += addressDetailsHTML
 }
 
 function renderAddress(address) {
     // TODO: Account for null values (floor and door nr)
-    return `${address.street} ${address.houseNumber}, ${address.floorNumber}${address.doorNumber}. ${address.zipCode}`
+    return `${address.street} ${address.houseNumber}, ${address.floorNumber !== 0 ? address.floorNumber : "" }${address.doorNumber !== null ? address.doorNumber : "" }. ${address.zipCode}`
 }
 
 export function setupAutoComplete() {
