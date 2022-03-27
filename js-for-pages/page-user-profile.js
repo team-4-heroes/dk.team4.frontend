@@ -57,7 +57,7 @@ function handleAddress(address) {
 }
 
 function renderAddress(address) {
-    // TODO: Account for null values (floor and door nr)
+    // TODO: Change in backend: Floor nr should be String, because of kl. and st. Currently crashes search
     return `${address.street} ${address.houseNumber}, ${address.floorNumber !== 0 ? address.floorNumber : "" }${address.doorNumber !== null ? address.doorNumber : "" }. ${address.zipCode}`
 }
 
