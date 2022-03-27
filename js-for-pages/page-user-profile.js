@@ -23,17 +23,30 @@ function inputAddress() {
 }
 
 function renderUserDetails(user) {
+    const readableLabels = {
+        "id": "User Id",
+        "username": "Username",
+        "firstName" : "First name",
+        "lastName" : "Last name",
+        "email" : "Email address",
+        "phoneNumber" : "Phone number"
+    }
     let profileContainer = document.getElementById("user-profile-container")
-    let userDetailsHTML =
-        `<ul>
-        <li>User id: ${user.id}</li>
-        <li>Username: ${user.username}</li>
-        <li>First name: ${user.firstName}</li>
-        <li>Last name: ${user.lastName}</li>
-        <li>Email: ${user.email}</li>
-        <li>Phone number: ${user.phoneNumber}</li>
-    </ul>`
+    let userDetailsHTML = "";
+
+    for (var key in user) {
+        if (user.hasOwnProperty(key) && readableLabels.hasOwnProperty(key)) {
+            userDetailsHTML += renderItem(user[key], readableLabels[key])
+        }
+    }
     profileContainer.innerHTML=userDetailsHTML
+}
+
+function renderItem(item, label) {
+    return `<div class="input-group mb-3 ">
+        <span id="labelFor${label}" class="input-group-text">${label}</span>
+        <input type="text" readOnly class="form-control" id="${label}_id" value="${item}" aria-label="Address" aria-describedby="labelFor${label}">
+    </div>`
 }
 
 function handleAddress(address) {
