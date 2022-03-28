@@ -1,4 +1,5 @@
 import { showPage, makeOptions } from "../utils.js"
+import { SERVER_URL } from "../settings.js"
 
 export function setupLoginHandlers() {
   document.getElementById("btn-login").onclick = login
@@ -7,7 +8,7 @@ export function setupLoginHandlers() {
 function login() {
   // Athenticate user with credential from login form
   let user = {username: document.getElementById("username").value, password: document.getElementById("password").value}
-  fetch("http://localhost:8080/api/auth/login", makeOptions("POST", user)).then(resp=>resp.json())
+  fetch(`${SERVER_URL}auth/login`, makeOptions("POST", user)).then(resp=>resp.json())
   .then(resp=>{
     setLoginState(resp.token, resp.roles, resp.username)
     showPage("page-home") // redirect to page-home
@@ -41,6 +42,8 @@ export function updateLoginDependentComponents() {
     document.getElementById("user-details").style.display = "inline"
   }
   document.getElementById("page-login").style.display = loggedIn ? "none" : "block"
+  document.getElementById("page-user-profile").style.display = loggedIn ? "block" : "none"
+  document.getElementById("page-sign-up").style.display = loggedIn ? "none" : "block"
   document.getElementById("page-logout").style.display = loggedIn ? "block" : "none"
   document.getElementById("user-details").style.display = loggedIn ? "inline" : "none"
   document.getElementById("hobby-search").style.display = loggedIn ? "flex" : "none"

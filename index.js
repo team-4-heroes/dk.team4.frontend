@@ -14,7 +14,7 @@ function renderMenuItems(evt) {
     // Execute JS for the chosen page
 
     case "page-search-result": { //TODO: use SERVER_URL instead
-        fetch(`http://127.0.0.1:8080/api/hobby-infos/search-by-hobby/${document.getElementById("hobby-query").value}`, makeOptions("get"))
+        fetch(`${SERVER_URL}hobby-infos/search-by-hobby/${document.getElementById("hobby-query").value}`, makeOptions("get"))
           .then(res=>res.json()).then(h=>{
             console.log(h)
             mapAndDraw(h)
