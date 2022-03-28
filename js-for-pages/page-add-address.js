@@ -1,4 +1,5 @@
 //Vælg adresse
+// TODO: Remove because not used anywhere?
 function addAddress() {
     console.log("Called addAddress")
     const address = {}
