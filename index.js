@@ -13,7 +13,7 @@ function renderMenuItems(evt) {
   switch (id) {
     // Execute JS for the chosen page
 
-    case "page-search-result": { //TODO: use SERVER_URL instead
+    case "page-search-result": {
         fetch(`${SERVER_URL}hobby-infos/search-by-hobby/${document.getElementById("hobby-query").value}`, makeOptions("get"))
           .then(res=>res.json()).then(h=>{
             console.log(h)
